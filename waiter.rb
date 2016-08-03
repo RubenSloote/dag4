@@ -1,3 +1,9 @@
+require './menu'
+
+
+
+
+
 class Waiter
   def greet_guest
     p "Good day, Welcome to Ruben's Pizzeria"
@@ -9,21 +15,32 @@ class Waiter
       p "1. Would you like to order a pizza?"
       p "2. Would that be it?"
 
-      p take_order(gets.chomp.to_i)
+      take_order(gets.chomp.to_i)
   end
 
     def take_order(order_number)
       case order_number
       when 1
-        "let me get the menu."
+        p "let me get the menu."
+        list_menu
       when 2
-        "Thank you for your visit."
+         p "Thank you for your visit."
       else
-          "I really don't understand."
+         p "I really don't understand."
       end
     end
 
 
+
+    def initialize(menu)
+      @menu = menu
+    end
+
+    def list_menu
+      @menu.contents.each do |recipe|
+        p "#{recipe.name}"
+      end
+    end
 
 
 
