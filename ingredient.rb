@@ -1,3 +1,5 @@
+
+
 class Ingredient
 
   TOMATO = "Tomato"
@@ -18,5 +20,10 @@ class Ingredient
   def amount
     @amount
   end
+
+  def use(amount)
+    @amount -= amount
+  end
+
 
 end

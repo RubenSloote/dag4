@@ -1,9 +1,5 @@
 
 
-
-
-
-
 class Waiter
 
   def initialize(menu, kitchen)
@@ -47,7 +43,11 @@ class Waiter
 
     def order_food(choice)
       dish = @menu.contents[choice]
-      @kitchen.order(dish)
+      if @kitchen.order(dish)
+        p "Dish is on its way"
+      else
+        p "Sorry this dish is not available"
+      end
     end
 
 
