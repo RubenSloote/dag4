@@ -11,7 +11,7 @@ class Storage
 
   def fetch(ingredients)
     ingredients.each do |ingredient|
-      item = @items.detect { |item| item.name == ingredient.name}
+      item = @items.detect { |item| item.name == ingredient.name }
       if item
       item.use ingredient.amount
     else
