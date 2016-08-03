@@ -6,6 +6,7 @@ class Waiter
     @menu = menu
     @kitchen = kitchen
     @check = Check.new
+    @serving = true
   end
 
   def greet_guest
@@ -29,6 +30,7 @@ class Waiter
         order_food(gets.chomp.to_i)
       when 2
          p "Thank you for your visit."
+         @serving = false
       else
          p "I really don't understand."
       end
@@ -52,6 +54,9 @@ class Waiter
       end
     end
 
+    def serving?
+      return @serving
+    end
 
 
 
