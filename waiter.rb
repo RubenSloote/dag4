@@ -29,7 +29,8 @@ class Waiter
         list_menu
         order_food(gets.chomp.to_i)
       when 2
-         p "Thank you for your visit."
+          p "The total amount is #{@check.sum} Euro"
+          p "Thank you for your visit."
          @serving = false
       else
          p "I really don't understand."
