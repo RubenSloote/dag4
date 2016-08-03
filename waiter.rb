@@ -46,12 +46,16 @@ class Waiter
     end
 
     def order_food(choice)
-      dish = @menu.contents[choice]
-      if @kitchen.order(dish)
-        p "Dish is on its way"
-        @check.add(dish)
+      if choice > 2
+        p "ERROR ERROR ERROR ERROR ERROR"
       else
-        p "Sorry this dish is not available"
+        dish = @menu.contents[choice]
+          if @kitchen.order(dish)
+            p "Dish is on its way"
+            @check.add(dish)
+          else
+            p "Sorry this dish is not available"
+          end
       end
     end
 
