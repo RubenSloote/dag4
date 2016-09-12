@@ -1,4 +1,4 @@
-require './check'
+atrequire './check'
 
 class Waiter
 
